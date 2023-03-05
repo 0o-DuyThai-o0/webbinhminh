@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="icon" href="/public/uploads/images/logo-con.jpg">
+  <?php if(isset($product)){?>
+      <title><?php echo $product->name; ?></title>
+      <meta name="keywords" content="<?php echo $product->the_tu_khoa; ?>"/>
+      <?php 
+         }
+         ?>
+      <?php if(isset($cat)) {
+         ?>
+      <title></title>
+      <meta name="keywords" content=""/>
+      <meta property="og:description" content="" />
+      <?php
+         }  ?>
+      <?php if(isset($title)) {
+         echo "<title>".$title."</title>";
+         }else{
+          echo "<title>"."Công Ty Vận Chuyển Thành Hưng LGT"."</title>";
+         }
+         
+         ?>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/public/js-s/bootstrap.bundle.min.js"></script>
+	
+    <link rel="stylesheet" href="/public/css/style-999.css">
+    <link rel="stylesheet" href="/public/css/all.min.css" />
+   
+    <link rel="stylesheet" href="/public/css/swiper-bundle.min.css" />
+    <script src="/public/js-s/swiper-bundle.min.js"></script>
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="nav-y" style="overflow: scroll;">
+        <div class="close">
+           <i class="fa fa-times-circle" aria-hidden="true" style="    font-size: 200%;"></i>
+		 
+        </div>
+        <nav> 
+            <ul class="lis-t" >
+										                              <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_mobile_header($jsons,'');
+                               ?>
+			
+
+            </ul>
+        </nav>
+    </div>
+    <section class="main">
+        <div class="top py-4">
+            <div class="container head_top_s">
+			<div class="col-lg-4 column">
+			 <?php home_field($all_field_home,23); ?>
+			</div>
+			<div class="col-lg-8 column">
+			<?php home_field($all_field_home,25); ?>
+			</div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-sm navbar-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse menu_sss" id="collapsibleNavbar">
+                            <ul class="navbar-nav">
+							                              <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_one_header($jsons,'');
+                               ?>
+							</ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>

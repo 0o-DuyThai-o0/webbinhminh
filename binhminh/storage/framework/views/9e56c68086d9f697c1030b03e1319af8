@@ -1,0 +1,137 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('site.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="row-1">
+            <div class="container">
+                <div class="box">
+                    <div class="col-lg-5 column py-3">
+                        <h3><i class="fa fa-map-marker" style="font-size:20px"></i> <?php home_field($all_field_home,28); ?></h3>
+                        <p><?php home_field($all_field_home,29); ?></p>
+                        <p><?php 	home_field($all_field_home,30); ?></p>
+                    </div>
+                    <div class="col-lg-4 column py-3">
+                        <h3> <i class="fa fa-map-marker" style="font-size:20px"></i> <?php home_field($all_field_home,31); ?></h3>
+                        <p><?php home_field($all_field_home,32); ?></p>
+                        <p><?php home_field($all_field_home,33); ?></p>
+                    </div>
+                    <div class="col-lg-3 column py-4 ">
+                        <div class="card-l py-2 px-3">
+                            <p>
+                               <i class="fa fa-mobile-phone" style="font-size:24px"></i>
+                                <?php home_field($all_field_home,34);?>
+                            </p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="container">
+               
+				<div class="header-card pt-4 pb-3 color_s" style="text-align:center;">
+                   <?php home_field($all_field_home,35);?>
+                </div>
+                
+                <div class="body-card">
+                    <div class="box">
+					                  <?php foreach($bai_viet_quan_trong as $lvhd): ?>
+									  
+					<div class="col-lg-6 column zoom">
+                                                          <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                            <div class="content">
+                                <h5><a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a></h5>
+                                <P>
+								<?php
+								//echo $small = substr($lvhd->content, 0, 100);
+								
+								$kytu=$lvhd->content;
+								$kytu=strip_tags($kytu);
+								echo substr($kytu, 0, 200);
+								?>
+								
+							</P>
+                            </div>
+                        </div>
+						
+						
+				
+                  <?php endforeach; ?>
+					
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-3 py-5">
+            <div class="container">
+                <div class="box">
+                    <div class="col-lg-6 left">
+                       <?php home_field($all_field_home,37); ?>
+                    </div>
+                    <div class="col-lg-6 right">
+<?php home_field($all_field_home,36); ?>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div class="row-4">
+            <div class="container">
+                <div class="header-card pt-4 pb-3 color_s">
+                    <h3 style="text-align: center;"><?php 	home_field($all_field_home,38); ?></h3>
+                </div>
+                <div class="body-card">
+                    <div class="box">
+										                  <?php foreach($tin_tuc_new as $lvhd): ?>
+                        <div class="col-lg-4 column zoom"> 
+                                                          <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                            <div class="content">
+<h5><a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a></h5>
+                                <P>
+								<?php
+								//echo $small = substr($lvhd->content, 0, 100);
+								
+								$kytu=$lvhd->content;
+								$kytu=strip_tags($kytu);
+								echo substr($kytu, 0, 200);
+								?>
+                            </div>
+                        </div>	
+				
+                  <?php endforeach; ?>
+
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

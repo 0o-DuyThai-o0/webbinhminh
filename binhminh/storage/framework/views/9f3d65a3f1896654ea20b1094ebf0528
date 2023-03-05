@@ -1,0 +1,214 @@
+    <!-- ----------------- footer ----------------- -->
+    <div id="footer">
+        <div class="ft1_ctn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="name_ft_tt">
+                            <h4><?php home_field($all_field_home,8); ?></h4>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                           <b><?php home_field($all_field_home,9); ?></b> 
+                        </div>
+    
+                        <div class="ttft">
+                           <?php home_field($all_field_home,10); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,11); ?>
+</b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,12); ?>
+                        </div>
+                        
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,13); ?></b> 
+                        </div>
+     
+                        <div class="ttft">
+                            <?php home_field($all_field_home,14); ?>
+                        </div>
+                    </div>
+    
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="name_ft_tt">
+                            <h4><?php home_field($all_field_home,15); ?></h4>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                           <b><?php home_field($all_field_home,16); ?></b> 
+                        </div>
+    
+                        <div class="ttft">
+                           <?php home_field($all_field_home,17); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,18); ?></b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,19); ?>
+                        </div>
+                        
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,20); ?> </b> 
+                        </div>
+     
+                        <div class="ttft">
+                            <?php home_field($all_field_home,21); ?>
+                        </div>
+    
+                        <a href="#">
+                            <img src="./img/dmca_protected_sml_120f.png" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="name_ft_tt">
+                            <h4><?php home_field($all_field_home,22); ?></h4>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                           <b><?php home_field($all_field_home,23); ?></b> 
+                        </div>
+    
+                        <div class="ttft">
+                           <?php home_field($all_field_home,24); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,25); ?> </b> 
+                        </div>
+     
+                        <div class="ttft">
+                            <?php home_field($all_field_home,26); ?>
+                        </div>
+                        
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,27); ?></b> 
+                        </div>
+     
+                        <div class="ttft">
+                            <?php home_field($all_field_home,28); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,29); ?></b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,30); ?>
+                        </div>
+                    </div>
+    
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="name_ft_tt">
+                            <h4><?php home_field($all_field_home,31); ?></h4>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                           <b><?php home_field($all_field_home,32); ?></b> 
+                        </div>
+    
+                        <div class="ttft">
+                           <?php home_field($all_field_home,33); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,34); ?> </b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,35); ?>
+                        </div>
+                        
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,36); ?> </b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,37); ?>
+                        </div>
+    
+                        <div class="ten_tt_ft">
+                            <b><?php home_field($all_field_home,38); ?> </b> 
+                        </div>
+     
+                        <div class="ttft">
+                           <?php home_field($all_field_home,39); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="ft2_ctn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                        
+                    </div>
+    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- ----------------- footer2 ----------------- -->
+    <div id="footer2">
+      <?php home_field($all_field_home,40); ?>
+    </div>
+
+    <!------------------ Về đầu trang ----------------->
+    <div id="goTop"><i class="fa-solid fa-angles-up"></i></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript"> $(function(){ $(window).scroll(function () { if ($(this).scrollTop() > 100) $('#goTop').fadeIn(); else $('#goTop').fadeOut(); }); $('#goTop').click(function () { $('body,html').animate({scrollTop: 0}, 'slow'); }); }); </script>
+</body>
+</html>
+
+<script>
+$(window).scroll(function() { 
+    if ($(this).scrollTop()>100)
+     {
+       $('#menu').addClass( "fix_s" );   
+     }
+    else
+     {
+      $('#menu').removeClass( "fix_s" );
+     }
+ });
+</script>
+<script> 
+$(function(){
+
+    var url = window.location.pathname, 
+        urlRegExp = new RegExp(url.replace(/\/$/,'') + "$"); // create regexp to match current url pathname and remove trailing slash if present as it could collide with the link in navigation in case trailing slash wasn't present there
+        // now grab every link from the navigation
+		//alert(url.length);
+		if(url.length>1) {
+        $('#menu a').each(function(){
+            // and test its normalized href against the url pathname regexp
+            if(urlRegExp.test(this.href.replace(/\/$/,''))){
+                $(this).addClass('dang_truy_cap');
+            } 
+        });
+		}
+
+});
+</script>
+<style>
+.fix_s{
+	    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
+</style>

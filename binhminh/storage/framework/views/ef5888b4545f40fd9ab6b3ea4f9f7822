@@ -1,0 +1,50 @@
+
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div id="wrapper"  class="container admin-admin">
+    <div class="row">
+        <div id="sidebar-wrapper" class="col-md-3">
+            <?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <div id="page-content-wrapper"  class="col-md-9 admin-content">
+            <h2>Định dạng Mới</h2>
+            <?php echo Form::open(array('action' => 'Admin\SizeController@store')); ?>
+
+            <div class="row add-user">
+                <div class="col-md-1">
+                    Tên Định dạng
+                </div>
+                <div class="col-md-11">
+                    <?php echo Form::text('ten_dinh_dang','',array('class' => 'form-control')); ?>
+
+                </div>
+            </div>
+            <div class="row add-user">
+                <div class="col-md-1">
+                   Mô tả
+                </div>
+                <div class="col-md-11">
+                    <?php echo Form::text('mo_ta','',array('class' => 'form-control')); ?>
+
+                </div>
+            </div>
+            <div class="row add-user">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10">
+                    <?php echo Form::submit('Create',array('class' => 'btn btn-default')); ?>
+
+                </div>
+            </div>
+
+            <?php echo Form::close(); ?>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

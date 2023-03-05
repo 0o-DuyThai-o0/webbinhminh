@@ -1,0 +1,28 @@
+                        <div class="slide-active"> 
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide qeqe">
+									
+									<?php home_field($all_field_home,25); ?>
+									
+									</div>
+                                     <div class="swiper-slide qeqe">
+									 
+									<?php home_field($all_field_home,26); ?>
+									 
+									 </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+
+                            <script>
+                                var swiper = new Swiper(".mySwiper", {
+                                    loop: true,
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    },
+                                });
+                            </script>
+                        </div>

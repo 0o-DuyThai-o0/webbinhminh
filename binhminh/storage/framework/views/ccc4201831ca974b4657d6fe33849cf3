@@ -1,0 +1,664 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div id="body">
+<div class="container-fluid">
+<div class="total1">
+<div class="show-body">
+<div class="col-lg-9 col-12 relative">
+   <?php echo $__env->make('site.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+   <div class="display-product sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">SẢN PHẨM NỔI BẬT</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten1">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten1">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper1 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($sp_noi_bat as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper1", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten1",
+                    prevEl: ".left-muiten1",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product1 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">SƠN DULUX</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten2">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten2">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper2 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($du_lux as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper2", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten2",
+                    prevEl: ".left-muiten2",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product2 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">SƠN MAXILITE</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten3">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten3">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper3 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($maxilite as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?> 
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper3", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten3",
+                    prevEl: ".left-muiten3",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product3 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">SƠN JOTUN</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten4">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper4 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($jotun as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper4", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten4",
+                    prevEl: ".left-muiten4",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product4 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">SƠN SIKA</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten5">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten5">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper5 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($sika as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper5", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten5",
+                    prevEl: ".left-muiten5",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <!--
+   <div class="display-product5 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">BỘT TRÉT TƯỜNG</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten6">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten6">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper6 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($du_lux as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper6", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            
+                navigation: {
+                    nextEl: ".right-muiten6",
+                    prevEl: ".left-muiten6",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product6 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">MÁY PHA MÀU</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten7">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten7">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper7 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($du_lux as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper7", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten7",
+                    prevEl: ".left-muiten7",
+                },
+            });
+         </script>
+      </div>
+   </div>
+   <div class="display-product123 sss_product">
+      <div class="first-slider">
+         <div class="logo-sm">
+            <div class="smalicon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5h6.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z" />
+               </svg>
+            </div>
+            <div class="sanphamnoibat">
+               <span class="sanpham">TIN MỚI NHẤT</span>
+            </div>
+         </div>
+         <div class="logo-muiten">
+            <div class="left-muiten8">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+               </svg>
+            </div>
+            <div class="right-muiten8">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+               </svg>
+            </div>
+         </div>
+      </div>
+      <div class="line-blue">
+         <div class="display-blue">
+         </div>
+      </div>
+      <div class="display-detail">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="swiper mySwiper8 rrrr">
+                  <div class="swiper-wrapper">
+                     <?php foreach($du_lux as $lvhd): ?> 
+                     <div class="swiper-slide eeee">
+                        <?php          
+                           $img_xs = json_decode($lvhd->image_list);
+                           if($img_xs == null){
+                           ?>
+                        <?php }else{
+                           if(isset($img_xs)==true) {
+                                 foreach ($img_xs as $img_x) {
+                                 
+                           ?>
+                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } ?>
+                        <div class="text-img">
+                           <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                        </div>
+                     </div>
+                     <?php endforeach; ?>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <script>
+            var swiper = new Swiper(".mySwiper8", {
+                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".right-muiten8",
+                    prevEl: ".left-muiten8",
+                },
+            });
+         </script>
+      </div>
+   </div>
+-->
+
+</div>
+<div class="col-lg-3 col-12 posi">
+   <?php echo $__env->make('site.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</div>
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

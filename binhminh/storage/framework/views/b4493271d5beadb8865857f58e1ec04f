@@ -1,0 +1,14 @@
+<h4 class="van_phong_giao_dich">Văn Phòng Giao Dịch </h4>
+<p>Công Ty Vận Chuyển Thành Hưng LGT</p>
+<p><b>Trụ sở chính:</b> 184 Phố Vọng, Phương Liệt, Thanh Xuân, Hà Nội</p>
+<p><b>Hotline:</b> 02422.444.555 </p>
+
+
+<p><b>Email:</b> vanchuyenthanhhunglgt.vn@gmail.com</p>
+
+
+<p><b>Website:</b> vanchuyenthanhhunglgt.vn</p>
+<?php home_field($all_field_home,45); ?>
+
+
+

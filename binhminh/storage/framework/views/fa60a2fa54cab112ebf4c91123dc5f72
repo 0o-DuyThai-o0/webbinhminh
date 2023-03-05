@@ -1,0 +1,87 @@
+<div class="col-xl-3 col-lg-3">
+                    <div id="left-menu">
+                        <div class="clearfix panel metismenu">
+                            <aside class="sidebar">
+                                <div class="sidebar-nav">
+                                    <ul class="menu_mobile_list_inner">
+						                                 <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_mobile_header($jsons,'');
+                               ?>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="ptinamebock">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    Hỗ trợ khách hàng
+                                </div>
+                            </div>
+                            <table width="100%" cellspacing="0" cellpadding="0">            
+                                <tbody class="support-ol">
+                                    <tr>                
+                                        <td width="5%" class="support-item support-emotion">                
+                                            <i class="fa fa-user" aria-hidden="true" style="color: #f00;"></i> 
+                                        </td>               
+                                        <td class="support-item">                   
+                                            <div style="float: left">
+                                                <b class="padleft-five"> &nbsp;HOTLINE</b>
+                                            </div>
+                                            <div style="float: right">
+                                                <a title="Liên hệ với KINH DOANH" rel="nofollow" href="mailto:vlxdhuytuanphat@gmail.com"> 
+                                                    <img src="http://vlxdhuytuanphat.vn/public/frontend/images/email.png" alt="">
+                                                </a>                 
+                                            </div>              
+                                        </td>           
+                                    </tr>           
+                                    <tr class="support-phone">
+                                        <td colspan="2">
+                                            <i title="0833868383" class="fa fa-phone" style="color: #f00;"></i>
+                                            <span>
+                                                <a title="Tel:0833868383" href="tel:0833868383">0833 868 383</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                                
+                        </div>
+                        <div class="mainblockmenu">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    News
+                                </div>
+                            </div>
+                            <ul>
+                                <?php foreach($tin_tuc as $lvhd): ?>
+                                   <li class="clearfix">
+                                        <?php          
+                                           $img_xs = json_decode($lvhd->image_list);
+                                           if($img_xs == null){
+                                           ?>
+                                        <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                        <?php }else{
+                                           if(isset($img_xs)==true) {
+                                                 foreach ($img_xs as $img_x) {
+                                                 
+                                           ?>
+                                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>">
+                                            <img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>" width="52" class="img-thumbnail pull-left tin-tuc-img">
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <a class="show" href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><?php echo e($lvhd->name); ?></a>
+                                    </li>
+                                 <?php endforeach; ?>
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>

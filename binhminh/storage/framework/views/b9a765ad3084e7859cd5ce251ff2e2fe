@@ -1,0 +1,69 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('site.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<section class="bread-crumb">
+  <div class="container">
+
+    <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">          
+      <li class="home">
+        <a itemprop="url" href="index.html" ><span itemprop="title">Trang chủ</span></a>            
+        <span><i class="fa fa-angle-right"></i></span>
+      </li>
+      
+      
+      <li><strong itemprop="title"> <?php echo $cat->name; ?></strong></li>
+      
+      
+    </ul>
+
+  </div>
+</section>
+<div id="box-main">
+        <div class="container">
+            <div class="row">
+                <?php echo $__env->make('site.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="col-xl-9 col-lg-9">
+                    <div class="box_content">
+                        <div class="product_home">
+                            <div class="tieude_id pd-mb">
+                                <h3 class=""><?php echo $cat->name; ?></h3>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="row mg-15">
+                                <?php foreach($list_articles_cat as $list_bv): ?>
+                                    <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 pd-15">
+                                       <div class="baiviet__item">
+                                          <div class="baiviet__border">
+                                             <div class="baiviet__hover">
+                                                <?php          
+                                                   $img_xs = json_decode($list_bv->image_list);
+                                                   if($img_xs == null){
+                                                   ?>
+                                                <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                                <?php }else{
+                                                   if(isset($img_xs)==true) {
+                                                         foreach ($img_xs as $img_x) {
+                                                         
+                                                   ?>
+                                                <a href="<?php echo e($list_bv->product_alias); ?>" title="<?php echo e($list_bv->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($list_bv->name); ?>"></a>
+                                                <?php } ?>
+                                                <?php } ?>
+                                                <?php } ?>
+                                             </div>
+                                             <div class="baiviet__content">
+                                                <div class="baiviet__name"> 
+                                                   <a href="<?php echo e($list_bv->product_alias); ?>"><?php echo e($list_bv->name); ?></a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                   </div>
+                                 <?php endforeach; ?>
+                            </div>
+                        </div>
+                       <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

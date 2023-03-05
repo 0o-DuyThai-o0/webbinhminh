@@ -1,0 +1,72 @@
+
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div id="wrapper"  class="container admin-admin">
+    <div class="row">
+        <div id="sidebar-wrapper" class="col-md-3">
+            <?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <div id="page-content-wrapper"  class="col-md-9 admin-content">
+            <h2> New Field  Vị trí </h2>
+            <?php if(count($errors) > 0): ?>
+          <div class="alert alert-danger">
+              <ul>
+                  <?php foreach($errors->all() as $error): ?>
+                      <li><?php echo e($error); ?></li>
+                  <?php endforeach; ?>
+              </ul>
+          </div>
+      <?php endif; ?>
+            <?php echo Form::open(array('action' => 'Admin\PriceController@store')); ?>
+
+            <div class="row add-user">
+                <div class="col-md-1">
+                    Name Field
+                </div>
+                <div class="col-md-11">
+                    <?php echo Form::text('name_field', '', array('class' => 'form-control')); ?>
+
+                </div>
+            </div>
+            <div class="row add-user">
+                <div class="col-md-1">
+                  Số Vị trí
+                </div>
+                <div class="col-md-11">
+                    <?php echo Form::text('stt', '', array('class' => 'form-control')); ?>
+
+                </div>
+            </div>
+            <div class="row add-user">
+                <div class="col-md-1">
+                  Mô tả 
+                </div>
+                <div class="col-md-11">
+                    <?php echo Form::text('mo_ta', '', array('class' => 'form-control')); ?>
+
+                </div>
+            </div>
+
+
+           
+
+            <div class="row add-user">
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-10">
+                    <?php echo Form::submit('Create',array('class' => 'btn btn-default')); ?>
+
+                </div>
+            </div>
+
+            <?php echo Form::close(); ?>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

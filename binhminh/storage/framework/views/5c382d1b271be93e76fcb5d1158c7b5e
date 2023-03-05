@@ -1,0 +1,140 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('site.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="row-1">
+            <div class="container">
+                <div class="box">
+                    <div class="col-lg-5 column py-3">
+                        <h3><i class="fa fa-map-marker" style="font-size:20px"></i> <?php home_field($all_field_home,28); ?></h3>
+                        <p><?php home_field($all_field_home,29); ?></p>
+                        <p><?php 	home_field($all_field_home,30); ?></p>
+                    </div>
+                    <div class="col-lg-4 column py-3">
+                        <h3> <i class="fa fa-map-marker" style="font-size:20px"></i> <?php home_field($all_field_home,31); ?></h3>
+                        <p><?php home_field($all_field_home,32); ?></p>
+                        <p><?php home_field($all_field_home,33); ?></p>
+                    </div>
+                    <div class="col-lg-3 column py-4 ">
+                        <div class="card-l py-2 px-3">
+                            <p>
+                               <i class="fa fa-mobile-phone" style="font-size:24px"></i>
+                                <?php home_field($all_field_home,34);?>
+                            </p>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="container">
+               
+				<div class="header-card pt-4 pb-3 color_s" style="text-align:center;">
+                   <?php home_field($all_field_home,35);?>
+                </div>
+                
+                <div class="body-card">
+                    <div class="box">
+					                  <?php foreach($bai_viet_quan_trong as $lvhd): ?>
+									  
+					<div class="col-lg-6 column">
+                                                          <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                            <div class="content">
+                                <h5><a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a></h5>
+                                <P>Gia Hưng cung cấp dịch vụ chuyển nhà, dọn nhà trọn gói nhanh chóng , uy tín,giá rẻ nhất
+                                    Hà Nội.Miễn phí khảo sát & báo giá tại nhà khách hàng.</P>
+                            </div>
+                        </div>
+						
+						
+				
+                  <?php endforeach; ?>
+					
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-3 py-5">
+            <div class="container">
+                <div class="box">
+                    <div class="col-lg-6 left">
+                       <?php home_field($all_field_home,37); ?>
+                    </div>
+                    <div class="col-lg-6 right">
+<?php home_field($all_field_home,36); ?>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div class="row-4">
+            <div class="container">
+                <div class="header-card pt-4 pb-3 color_s">
+                    <h3 style="text-align: center;"><?php 	home_field($all_field_home,38); ?></h3>
+                </div>
+                <div class="body-card">
+                    <div class="box">
+                        <div class="col-lg-4 column">
+                            <img class="zoom" src="/public/images/thong-tin-van-chuyen-1.png" alt="">
+                            <div class="content">
+                                <h4>Cách Đóng Gói Hàng dễ Vỡ</h4>
+                                <p>Các loại hàng hóa làm bằng thủy tinh như đĩa, ly, chén, khung ảnh, bóng đèn… hay các…</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 column">
+                            <img src="/public/images/thong-tin-van-chuyen-2.png" alt="">
+                            <div class="content">
+                                <h4>Vận chuyển tủ lạnh nằm ngang có làm sao không?</h4>
+                                <p>Hiện nay, tủ lạnh được xem là một dòng đồ gia dụng đại trà, xuất hiện phổ biến…</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 column">
+                            <img src="/public/images/thong-tin-van-chuyen-3.png" alt="">
+                            <div class="content">
+                                <h4>Dịch vụ chuyển nhà, văn phòng: Giá cả không quyết định chất lượng</h4>
+                                <p>Không phải cứ dịch vụ nào giá rẻ sẽ là kém, và không phải công ty nào đắt…</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 column pd">
+                            <img src="/public/images/thong-tin-van-chuyen-4.png" alt="">
+                            <div class="content">
+                                <h4>Cận cảnh ɡiấy đi đườnɡ kèm mã QR đầυ tiên được cấp ở Hà Nội</h4>
+                                <p>Nɡày 5/9, nhữnɡ ɡiấy đi đườnɡ kèm mã QR đầυ tiên tại phònɡ CSGT- CATP Hà Nội đã…</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 column pd">
+                            <img src="/public/images/thong-tin-van-chuyen-5.png" alt="">
+                            <div class="content">
+                                <h4>Những điều bạn nên hỏi dịch vụ chuyển nhà trước khi thuê họ</h4>
+                                <p>Thật lo lắng khi giao gần như toàn bộ tài sản của mình cho những người khác chuyển…</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 column pd">
+                            <img src="/public/images/thong-tin-van-chuyen-6.png" alt="">
+                            <div class="content">
+                                <h4>Làm gì để chuyển nhà không bị mất đồ?</h4>
+                                <p>Ông cha ta có câu: “3 lần chuyển nhà bằng một lần cháy nhà”, ý nói đến nguy…</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

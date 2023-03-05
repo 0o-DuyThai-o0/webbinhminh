@@ -1,0 +1,114 @@
+.tt_ttdl_ab{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.tin_tuc_du_lich{
+    margin-bottom: 30px;
+}
+
+.the_anh_ttdl img{
+    max-width: 100%;
+}
+
+.mota_ttdl{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.about_mota_tt{
+    margin: 10px 0;
+}
+
+.tin_tuc_du_lich a:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+@media screen and (max-width:768px) {
+    .huhu{
+        border-right: none !important;
+    }
+}
+
+.the_anh_ttdl{
+    position: relative;
+}
+
+.dong_con_anh{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: rgb(104, 125, 164) solid 2px;
+    background-color: #fff;
+    margin-top: 15px;
+    left: -10px;
+    color: rgb(104, 125, 164);
+}
+
+.chua_the_a  a:hover .dong_con_anh{
+    color: #fff;
+    background-color: rgb(104, 125, 164);
+    margin: 20px 0;
+} 
+
+.chua_the_a{
+    margin: 20px 0;
+}
+
+.menu_duoi_bo_tron{
+    position: relative;
+    width: 100%;
+    padding: 40px;
+}
+
+.chua_chap{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.menu_duoi_bo_tron a{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.vong_tron_duoi{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: #446084 solid 2px;
+    font-weight: 700;
+    color: #446084;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.menu_duoi_bo_tron a:hover .vong_tron_duoi{
+    color: #fff;
+    background-color: #446084;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.vong_tron_duoi i{
+    line-height: 30px;
+}
+
+@media screen and (max-width:320px) {
+    .bodi{
+        display: none;
+    }
+}
+
+.chua_chap .action{
+    color: #fff;
+    background-color: #446084;
+}
+

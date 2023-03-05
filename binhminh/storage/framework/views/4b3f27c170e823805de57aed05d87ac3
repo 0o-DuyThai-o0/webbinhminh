@@ -1,0 +1,25 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+  <div id="thong_tin_ban_ca">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+				<div class="hihi">
+				<h1 class="entry-title"><?php echo $product->name; ?></h1>	
+				 <div class="box_noidung" style="padding-top:20px;">
+
+                    <?php echo $product->content; ?>            
+                </div>
+                      </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+					<?php echo $__env->make('site.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

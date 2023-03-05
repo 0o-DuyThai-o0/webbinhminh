@@ -1,0 +1,121 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<section class="bread-crumb">
+  <div class="container">
+
+    <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">          
+      <li class="home">
+        <a itemprop="url" href="index.html" ><span itemprop="title">Trang chủ</span></a>            
+        <span><i class="fa fa-angle-right"></i></span>
+      </li>
+      
+      
+      <li><strong itemprop="title"><?php echo $product->name; ?></strong></li>
+      
+      
+    </ul>
+
+  </div>
+</section>
+<div id="box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="mgb-10 bd-prd">
+                        <?php          
+                             $img_xs = json_decode($product->image_list);
+                             if($img_xs == null){
+                             ?>
+                          <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                          <?php }else{
+                             if(isset($img_xs)==true) {
+                                   foreach ($img_xs as $img_x) {
+                                   
+                             ?>
+                          <img src="<?php echo $img_x->url;?>">
+                          <?php } ?>
+                          <?php } ?>
+                          <?php } ?>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="prddetail__content ">
+                        <div class="prddetail__name">
+                            <h2 class="prddetail__title"><?php echo $product->name; ?></h2>
+                        </div>
+                    </div>
+                    <div class="prddetail__li">
+                        <div class="prddetail__li--masp">
+                            <p><label><i class="fa fa-check-circle"></i> Mã sp:</label> <span class="f-weight"> </span></p>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="prddetail__li">
+                        <span class="prddetail__li--giaban"><label></label>  <span>Liên hệ</span></span>
+                    </div>
+                    <div class="prddetail__li">
+                        <div class="prddetail__li--contact">Chi tiết liên hệ số điện thoại: <span class="csshl"> 0916.859.666</span>
+                        </div>
+                    </div>
+
+                    <div class="prddetail__li">
+                        <div class="row prddetail__li--cs mg-5">
+                            <p class="col-lg-6 pd-5 rs-pd" style="padding-left: 0;"><a href="#"><i class="fa fa-check-circle"></i> Giá cả hợp lý</a></p>
+                            <p class="col-lg-6 pd-5 rs-pd" style="padding-right: 0;"><a href="#"><i class="fa fa-check-circle"></i> Dịch vụ hoàn hảo</a></p>
+                            <p class="col-lg-6 pd-5 rs-pd" style="padding-left: 0;"><a href="#"><i class="fa fa-check-circle"></i> Chất lượng tốt nhất</a></p>
+                            <p class="col-lg-6 pd-5 rs-pd" style="padding-right: 0;"><a href="#"><i class="fa fa-check-circle"></i> Nhanh chóng</a></p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box_noidung">
+                    <div class="tieude_id" style="margin-top: 20px">
+                        <h3>Nội dung</h3>
+                    </div>
+                    <?php echo $product->content; ?>            
+                </div>
+            </div>
+            <section class="product mgt-20">
+                <div class="tieude_id  pd-mb">
+                    <h3>Sản phẩm liên quan</h3>
+                </div>
+                <div class="mg-15 row">
+                        <?php foreach($san_pham_lien_quan as $splq): ?>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 pd-15">
+                            <div class="product__item">
+                                <div class="product__border">
+                                    <div class="product__img">
+                                        <?php          
+                                          $img_xs = json_decode($splq->image_list);
+                                          if($img_xs == null){
+                                          ?>
+                                          <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                        <?php }else{
+                                          if(isset($img_xs)==true) {
+                                                foreach ($img_xs as $img_x) {
+                                                
+                                        ?>
+                                         <a href="<?php echo e($splq->product_alias); ?>" title="Thép cây">
+                                            <img class=""  src="<?php echo $img_x->url;?>" alt="<?php echo e($splq->name); ?>"  data-loaded="true" style="width: 100%;"> 
+                                        </a>
+                                      <?php } ?>
+                                      <?php } ?>
+                                      <?php } ?>
+                                    </div>
+
+                                    <div class="product__content">
+                                        <div class="product__name"> 
+                                            <a href="<?php echo e($splq->product_alias); ?>"><?php echo e($splq->name); ?></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <?php endforeach; ?>
+                </div>
+                <div class="clear"></div>
+            </section>
+        </div>
+    </div>
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

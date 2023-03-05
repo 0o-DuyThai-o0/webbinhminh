@@ -1,0 +1,64 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<section class="bread-crumb">
+
+</section>
+
+    <div id="body">
+        <div class="container-fluid">
+            <div class="total1">
+                <div class="show-body">
+                    <div class="col-lg-9 relative">
+
+<header class="entry-header">
+		<h1 class="entry-title"><?php echo $product->name; ?></h1>	</header>
+				 <div class="box_noidung" style="padding-top:20px;">
+
+                    <?php echo $product->content; ?>            
+                </div>
+				            <section class="product mgt-20">
+                <div class="tieude_id  pd-mb">
+                  <h3 style="color: #000; border-bottom: 4px solid #d68b29; font-weight: 600;
+    padding-bottom: 15px; font-size: 20px;margin-top:25px;margin-bottom:15px;">Chuyên Mục Liên Quan</h3>
+                </div>
+                <div class="mg-15 row">
+                        <?php foreach($san_pham_lien_quan as $splq): ?>
+						
+                                    <div class="col-md-3 col-sm-3 col-6 detail-display">
+									<div class="s_bentrong">
+								    <a href="<?php echo e($splq->product_alias); ?>">
+                                            <div class="img-chongbamban">
+                                                <?php          
+                                                   $img_xs = json_decode($splq->image_list);
+                                                   if($img_xs == null){
+                                                   ?>
+                                                <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                                <?php }else{
+                                                   if(isset($img_xs)==true) {
+                                                         foreach ($img_xs as $img_x) {
+                                                         
+                                                   ?>
+                                                <a href="<?php echo e($splq->product_alias); ?>" title="<?php echo e($splq->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($splq->name); ?>" class="sondulux"></a>
+                                                <?php } ?>
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="text-dulux">
+                                                <span class="duluxchongbam"><a href="<?php echo e($splq->product_alias); ?>"><?php echo e($splq->name); ?> </a></span>
+                                            </div>
+                                        </a>
+                                   </div>
+								     </div>
+						
+
+                        <?php endforeach; ?>
+                </div>
+                <div class="clear"></div>
+            </section>
+                    </div>
+
+                    <div class="col-lg-3 col-12 posi">
+						<?php echo $__env->make('site.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                   </div> 
+
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

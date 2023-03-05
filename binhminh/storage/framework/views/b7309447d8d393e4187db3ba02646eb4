@@ -1,0 +1,123 @@
+<div class="col-xl-3 col-lg-3">
+                    <div id="left-menu">
+                        <div class="clearfix panel metismenu">
+                            <aside class="sidebar">
+                                <div class="sidebar-nav">
+                                    <ul>
+                                        <li class="">
+                                            <a href="/gach-xay-dung" title="Gạch xây dựng">Gạch xây dựng</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/cat-xay-dung" title="Cát xây dựng">Cát xây dựng</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/da-xay-dung" title="Đá xây dựng">Đá xây dựng</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/ton-ma-mau" title="Tôm mạ màu">Tôm mạ màu</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/xi-mang" title="Xi măng">Xi măng</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/thep-xay-dung" title="Thép xây dựng">Thép xây dựng</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="ptinamebock">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    Hỗ trợ khách hàng
+                                </div>
+                            </div>
+                            <table width="100%" cellspacing="0" cellpadding="0">            
+                                <tbody class="support-ol">
+                                    <tr>                
+                                        <td width="5%" class="support-item support-emotion">                
+                                            <i class="fa fa-user" aria-hidden="true" style="color: #f00;"></i> 
+                                        </td>               
+                                        <td class="support-item">                   
+                                            <div style="float: left">
+                                                <b class="padleft-five"> &nbsp;HOTLINE</b>
+                                            </div>
+                                            <div style="float: right">
+                                                <a title="Liên hệ với KINH DOANH" rel="nofollow" href="mailto:vlxdhuytuanphat@gmail.com"> 
+                                                    <img src="http://vlxdhuytuanphat.vn/public/frontend/images/email.png" alt="">
+                                                </a>                 
+                                            </div>              
+                                        </td>           
+                                    </tr>           
+                                    <tr class="support-phone">
+                                        <td colspan="2">
+                                            <i title="0971060606" class="fa fa-phone" style="color: #f00;"></i>
+                                            <span>
+                                                <a title="Tel:0971 060 606" href="tel:0916.859.666">0971 060 606</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody class="support-ol">
+                                    <tr>
+                                        <td width="5%" class="support-item support-emotion">
+                                            <i class="fa fa-user" aria-hidden="true" style="color: #f00;"></i>
+                                        </td>
+                                        <td class="support-item">
+                                            <div style="float: left">
+                                                <b class="padleft-five"> &nbsp;ĐIỆN THOẠI</b>
+                                            </div>
+                                            <div style="float: right">
+                                                <a title="Liên hệ với FAX ĐỢN ĐẶT HÀNG" rel="nofollow" href="mailto:vlxdhuytuanphat@gmail.com">
+                                                    <img src="http://vlxdhuytuanphat.vn/public/frontend/images/email.png" alt="">
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="support-phone">
+                                        <td colspan="2">
+                                            <i title="0971.06.06.06 - 0916.859.666" class="fa fa-phone" style="color: #f00;"></i>
+                                            <span>
+                                                <a title="Liên hệ với FAX ĐỢN ĐẶT HÀNG Tel: 0971.06.06.06 - 0916.859.666" href="tel:0971.06.06.06 - 0916.859.666">0971.06.06.06 - 0916.859.666</a>
+                                            </span>
+                                        </td>
+                                    </tr>  
+                                                     
+                                </tbody>
+                            </table>
+                                
+                        </div>
+                        <div class="mainblockmenu">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    TIN TỨC
+                                </div>
+                            </div>
+                            <ul>
+                                <?php foreach($tin_tuc as $lvhd): ?>
+                                   <li class="clearfix">
+                                        <?php          
+                                           $img_xs = json_decode($lvhd->image_list);
+                                           if($img_xs == null){
+                                           ?>
+                                        <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                        <?php }else{
+                                           if(isset($img_xs)==true) {
+                                                 foreach ($img_xs as $img_x) {
+                                                 
+                                           ?>
+                                        <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>">
+                                            <img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>" width="52" class="img-thumbnail pull-left tin-tuc-img">
+                                        </a>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <?php } ?>
+                                        <a class="show" href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><?php echo e($lvhd->name); ?></a>
+                                    </li>
+                                 <?php endforeach; ?>
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>

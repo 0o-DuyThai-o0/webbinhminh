@@ -1,0 +1,191 @@
+<?php
+//exit("đang làm");
+?>
+<?php echo $__env->make('site.succsess', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!DOCTYPE html>
+<html lang="vi">
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <?php if(isset($product)){?>
+      <title><?php echo $product->name; ?></title>
+      <meta name="keywords" content="<?php echo $product->the_tu_khoa; ?>"/>
+      <?php 
+         }
+         ?>
+      <?php if(isset($cat)) {
+         ?>
+      <title></title>
+      <meta name="keywords" content=""/>
+      <meta property="og:description" content="" />
+      <?php
+         }  ?>
+      <?php if(isset($title)) {
+         echo "<title>".$title."</title>";
+         }else{
+          echo "<title>"."Xây Dựng Anh Phát"."</title>";
+         }
+         
+         ?>
+      <link rel="icon" href="<?php echo e(asset('public/images/logohuytuanphat.png')); ?>">
+      <link rel="stylesheet" href="<?php echo e(asset('public/css/css-t/bootstrap.min.css')); ?>">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.6/css/jquery.fancybox.min.css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/owl.carousel.min.css?1550213083537" rel="stylesheet" type="text/css" />
+      <!-- Build Main CSS -->               
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/base.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/style.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/style.css')); ?>" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/module.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/responsive.css')); ?>" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/animate.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/swiper.min.mobile.css')); ?>" rel="stylesheet" type="text/css" />
+	  
+
+   </head>
+   <?php if(isset($_SESSION['admin'])){
+      ?>
+      <input type="button" class="btn btn-danger custom_an" value="Ẩn" style="position: fixed;z-index: 99999999;">
+      <?php } ?>
+   <body>
+      <!-- End Header -->
+
+      <header class="header_main">
+         <div class="hd-fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3 col-xl-3 col-md-12">
+                        <span>
+                            <marquee direction="LEFT">XÂY DỰNG ANH PHÁT THÁI BÌNH</marquee>
+                        </span>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-3 ">
+                        <span class="fix__hotline hide-9"><?php echo  home_field($all_field_home,1);?></span>
+                    </div>
+                    <div class="col-lg-3 col-xl-3 col-md-4 dis-none-max768">
+                        <span class="fix__email hide-9"><?php echo  home_field($all_field_home,2);?></span>
+                    </div>
+                    <div class="col-lg-3 col-xl-3 col-md-4 dis-none-max768">
+                        <div class="mxh hide-9">
+                        <ul>
+                            <li>
+                                <a target="_blank" href="/"> 
+                                    <?php echo  home_field($all_field_home,21);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://mail.google.com/mail/u/0/"> 
+                                    <?php echo  home_field($all_field_home,20);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://zalo.me/0000"> 
+                                    <?php echo  home_field($all_field_home,19);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="facebook"> 
+                                    <?php echo  home_field($all_field_home,18);?>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clear"> </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="container">
+                <div class="row flex-box">
+                    <div class="col-lg-2 col-xl-2 col-md-12 dis-none-max768">
+                        <div class="header__logo">
+                            <a href="/" title="xây dựng anh phát">
+                                <?php echo  home_field($all_field_home,6);?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-xl-10 col-md-12 dis-none-max768">
+                        <?php echo  home_field($all_field_home,7);?>
+                    </div>
+                    <div class="col-lg-10 col-xl-10 col-md-12 display-min-w768" style="padding:0;">
+                        <?php echo  home_field($all_field_home,3);?>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="header_bottom"> 
+            <div class="container bg_menu">
+               <div class="row">
+                  <!-- Menu mobile -->
+                  <div class="hidden-lg hidden-md visibile-sm visibile-xs">
+                     <section  id="menu-mobi" class="menu_mobile menu_mobile_button">
+                        <div id="menu_mobile_button_line_main">
+                           <span class="menu_mobile_button_line menu_mobile_button_line_1"></span>
+                           <span class="menu_mobile_button_line menu_mobile_button_line_2"></span>
+                           <span class="menu_mobile_button_line menu_mobile_button_line_3"></span>
+                        </div>
+                     </section>  
+                     <nav class="menu_mobile_list" style="display:none;">
+                        <div class="menu_mobile_pushmenu menu_mobile_pushmenu_left">
+                           <ul class="menu_mobile_list_inner">
+						                                 <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_mobile_header($jsons,'');
+                               ?>
+
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <!-- End Menu mobile -->
+                  <!-- Logo -->
+                  <div class="col-md-3 col-sm-10 col-xs-6 col-xs-offset-3 col-lg-offset-0 col-sm-offset-1 col-md-offset-0 display-min-w768 sonkaka">
+                     <div class="logo">
+                        <a href="/">  <?php echo  home_field($all_field_home,6);?>  </a>
+                     </div>
+                  </div>
+                <!-- End Logo -->
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                     <!-- Menu -->
+                     <nav class="menu_main hidden-sm hidden-xs">
+                        <div class="menu_main_list">
+                           <ul id="nav">
+                              <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_one_header($jsons,'');
+                               ?>
+                           </ul>
+                        </div>
+                     </nav>
+                      <!--
+                     <div class="searchboxlager">
+                        <div class="searchfromtop">
+                         <?php echo Form::open(array('method' => 'POST','action' => array('Site\SanphamController@getdata' ))); ?>
+
+                              <input type="text" class="form-control" maxlength="70" name="search_site" id="search" placeholder="Nhập từ khóa tìm kiếm và ấn enter">                           
+                              <input type="hidden" name="type" value="article">
+                         <?php echo Form::close(); ?>
+
+                           <a class="hidesearchfromtop"><i class="fa fa-times"></i></a>
+                        </div>
+                     </div>
+					
+                     <div class="search_form_main">
+                        <div class="search_form_icon"><i class="fa fa-search"></i></div>
+                     </div>
+					 -->
+                     <!-- End Search --> 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>

@@ -1,0 +1,26 @@
+@media screen and (max-width:576px) {
+    .table_tt_bgdvtxmdntnb{
+        display: none;
+    }
+}
+
+.anh_pgt{
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.anh_pgt img{
+    max-width: 100%;
+}
+
+.tt_tt_gt{
+    margin: 20px 0;
+}
+
+.gioi_thieu{
+    margin-bottom: 30px;
+}
+
+.bgthuexe{
+    margin: 10px 0 20px 0;
+}

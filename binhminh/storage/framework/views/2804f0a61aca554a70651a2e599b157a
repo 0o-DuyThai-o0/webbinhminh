@@ -1,0 +1,84 @@
+
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div class="container admin-admin">
+	<div class="row">
+		<div class="col-md-3">
+			<?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		<div class="col-md-9 admin-content">
+			<h2>Add Category</h2>
+				<?php echo Form::open(array('action' => 'Admin\CatController@store')); ?>
+
+				<div class="row add-user">
+					<div class="col-md-1">
+						Name
+					</div>
+					<div class="col-md-5">
+						<?php echo Form::text('name','',array('class' => 'form-control')); ?>
+
+					</div>
+				</div>
+				<div class="row add-user">
+					<div class="col-md-1">
+						Alias
+					</div>
+					<div class="col-md-5">
+						<?php echo Form::text('cat_alias', '', array('class' => 'form-control')); ?>
+
+					</div>
+				</div>
+
+				<div class="row add-user">
+					<div class="col-md-1">
+						Parent
+					</div>
+					<div class="col-md-5">
+					<select class="form-control" name="parent_id">
+						<?php
+							view_category( $cat_parents,$cats,-1);
+						?>
+					<!--
+						<?php foreach( $cat_parents as $cat_parent ): ?>
+
+							<?php foreach( $cats as $cat ): ?>
+								<?php if($cat_parent->id==$cat->id): ?>
+							         <option style="font-size:18px;" value="<?php echo e($cat->id); ?>">  
+											<?php echo e($cat->name); ?> 
+							         </option>
+								<?php endif; ?> 
+								<?php if( $cat_parent->id==$cat->parent_id ): ?>
+							         <option class="s-child" value="<?php echo e($cat->id); ?>">  
+											&nbsp;&nbsp;&nbsp;-<?php echo e($cat->name); ?> 
+							         </option>
+
+								<?php endif; ?>
+
+							<?php endforeach; ?>
+						<?php endforeach; ?>
+						-->
+				        <option value="0" selected>Không thuộc danh mục nào
+				        </option>
+
+				      </select>
+					</div>
+				</div>					
+				<div class="row add-user">
+					<div class="col-md-1">
+						
+					</div>
+					<div class="col-md-10">
+						<?php echo Form::submit('Create',array('class' => 'btn btn-default')); ?>
+
+					</div>
+				</div>
+				
+				<?php echo Form::close(); ?>
+
+			
+
+		</div>
+		
+	</div> 
+
+	</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

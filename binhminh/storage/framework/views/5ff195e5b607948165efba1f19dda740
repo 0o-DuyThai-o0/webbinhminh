@@ -1,0 +1,31 @@
+
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div class="container admin-admin">
+	<div class="row">
+		<div class="col-md-3">
+			<?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		<div class="col-md-9 admin-content">
+			<div class="row">
+       
+				<table class="table table-bordered">
+				<thead>
+				  <tr>
+				    <th>ID</th>      
+				    <th>Name</th>
+				    <th>Username</th>
+				  </tr>
+				</thead>
+				<tbody>
+
+				    <th><?php echo e($user->id); ?></th>      
+				    <th><?php echo e($user->name); ?></th>
+				   	<th><?php echo e($user->username); ?></th>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div> 
+
+	</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

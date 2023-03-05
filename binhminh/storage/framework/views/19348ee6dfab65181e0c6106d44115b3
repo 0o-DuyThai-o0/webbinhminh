@@ -1,0 +1,85 @@
+
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div id="wrapper"  class="container admin-admin">
+	<div class="row">
+		<div id="sidebar-wrapper" class="col-md-3">
+			<?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		<div id="page-content-wrapper" class="col-md-9 admin-content">
+		
+			<div class="row">
+			    <h2>Tất cả Admin</h2>
+				<?php if($errors->has()): ?> 
+				<p style="color:red;">
+				  <?php foreach($errors->all() as $error): ?>
+				    <?php echo $error; ?><br />		
+				  <?php endforeach; ?>
+				</p>
+				<?php endif; ?>
+				<?php if( !$users->count() ): ?>
+				        No user in Website
+				<?php else: ?>		        
+				<table class="table table-bordered edit-son">
+				<thead>
+				  <tr>
+				    <th>ID</th>      
+				    <th>Name</th>
+				    <th>Username</th>
+				    <th>Status</th>
+				  </tr>
+				</thead>
+				<tbody>
+				<?php
+
+				if($session_value) {
+					echo $session_value;
+					?>
+					<a href='<?php echo e(asset('admin/logout')); ?>'> logout </a>
+				<?php
+				}
+				?>
+				<?php foreach( $users as $user ): ?>
+					<tr>
+						<td> <?php echo e($user->id); ?></td>
+						<td>  <?php echo e($user->name); ?> <br/>
+						<a class="show-1" href="<?php echo e(asset('admin/admin')); ?>/<?php echo e($user->id); ?>">show
+						</a>	
+						<a class="show-1" href="<?php echo e(asset('admin/admin')); ?>/<?php echo e($user->id); ?>/edit"> edit
+						</a>	
+						<!--
+							<?php echo Form::open(array('method' => 'DELETE','action' => array('Admin\AdminController@destroy',$user->id))); ?>
+
+							 	<?php echo Form::submit('Delete', ['class' => 'btn btn-danger']); ?>
+
+							<?php echo Form::close(); ?>	
+							-->
+						</td>
+						<td>  <?php echo e($user->username); ?></td>
+						<td> 
+						<?php echo Form::open(array('method' => 'PUT','action' => array('Admin\AdminController@update',$user->id,$user->status ))); ?>
+
+						
+										<div class="status-<?php echo e($user->status); ?>" style="width:30px;height:30px;">
+										</div>
+							<?php echo Form::submit('Status',array('class' => 'btn btn-default')); ?>
+
+
+						<?php echo Form::close(); ?>
+
+						</td>
+					</tr>
+				<?php endforeach; ?>
+				 
+				</tbody>
+				</table>
+				<?php endif; ?>
+				<?php 
+				$users->setPath('admin');
+				echo $users->render(); ?>
+			</div>
+
+		</div>
+	</div> 
+
+	</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

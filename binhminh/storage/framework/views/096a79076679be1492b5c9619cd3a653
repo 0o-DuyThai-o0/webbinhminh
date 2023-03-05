@@ -1,0 +1,297 @@
+<?php echo $__env->make('admin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<div id="wrapper" class="container admin-admin">
+	<div class="row">
+		<div id="sidebar-wrapper" class="col-md-3">
+			<?php echo $__env->make('admin.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		<div id="page-content-wrapper" class="">
+			<h2>Chỉnh sửa Tin tức</h2>
+				<?php echo Form::open(array('method' => 'POST','action' => array('Admin\NewsController@update',$new->id))); ?> 
+				<div class="row add-user">
+					<div class="col-md-1">
+						Ảnh sản phẩm
+					</div>
+					<div class="col-md-11">
+					<div class="row">
+	                      <div id="edit_news">
+						
+				
+					 <?php 
+
+                                       $anh_children =  json_decode($new->image_list);
+			                           if($anh_children == true){
+
+									               	$i=0;
+									              
+									               
+			                             foreach ($anh_children as $value3) {
+											 
+											 
+                											 $s='image_edit_news'.$i; 
+                											 $_SESSION[$s]=$value3->url;
+                										 	 $i++;
+                										 
+			                      
+
+					                 ?>
+
+					                          <div class="img_x">
+					                          	
+					                             <img class="img_avatar" src="<?php echo $_SESSION[$s]; ?>">
+					                            <input class="btn btn-default xoa_anh_edit_news" type="button" value="x">
+					                             <input id="so_thu_tu_<?php echo $i;?>" name="so_thu_tu" type="hidden" value="<?php echo $i; ?>">
+					                      
+
+					                          </div>
+					                          
+					                         <?php } ?>
+                                  			 <?php } ?>
+
+                                    <input id="json_string_h2" type="hidden" name="image_news_avt" type="" value='<?php
+                                    $anh_children = json_decode($new->image_list);
+                                    
+                                  
+			                                       $anh_json ="";
+			                           if($anh_children == true){
+
+										$i=0;
+			                             foreach ($anh_children as $value3) {
+											 
+											 
+											 $s1='image_edit_news'.$i;  
+											 
+			                             if($anh_json=='')
+			                              {
+			                              $_SESSION[$s1]=$value3->url;
+			                                $anh_json='{"url":"'.$_SESSION[$s1].'"}';
+			                              }else {
+											  $_SESSION[$s1]=$value3->url;
+			                                $anh_json=$anh_json.',{"url":"'.$_SESSION[$s1].'"}';
+											
+			                              }
+										  $i++;
+										  
+			                            }
+			                        }
+									//	   echo $s1;
+			                            
+			               
+			                    echo $anh_json;
+
+
+			                             ?>'>
+
+			                             <?php 
+			                                 
+			                                         
+			                              ?>
+
+					</div>
+					<div id="img_edit_news_avatar" style="display:none;" name="img_edit_news_avatar">
+                              </div>
+                              <div class="row">       
+                             
+                                 <input type="text" name="Image_edit_news" class="btn btn-default" id="Image_edit_news" placeholder="Tìm ảnh" onclick="BrowseServer_edit_new_avt()" readonly="readonly" >
+                              </div>
+                              <script>
+                                 $(document).ready(function(){
+                                 
+                                 var son_type = $('#Image_edit_news').val(); //lấy gía trị ng dùng gõ son_type
+                                 
+                                    $("#page-content-wrapper").mousemove(function(){ //bắt sự kiện keyup khi người dùng gõ từ khóa tim kiếm
+                                     // var query = $(this).val(); //lấy gía trị ng dùng gõ
+                                      var query=$('#Image_edit_news').val();
+                                 
+                                      
+                                     if(query != '') //kiểm tra khác rỗng thì thực hiện đoạn lệnh bên dưới
+                                     {
+                                       var id = $('.id_img').val();
+                                      var query_t = $('#Image_edit_news').val();
+
+                                      var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
+                                 //alert (_token);
+                                 
+                                     document.getElementById("Image_edit_news").value = ""; 
+                                 
+                                 
+                                      $.ajax({
+                                       url:"/test-js-tt-edit-news", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
+                                       method:"POST", // phương thức gửi dữ liệu.
+                                       data:{query:query, _token:_token ,son_type:son_type,query_img:query_t},
+                                       
+                                       success:function(data){ //dữ liệu nhận về
+                                       document.getElementById("edit_news").innerHTML = data;         
+                                             
+                                      }
+                                      });
+
+                                      }
+                                 
+                                    });
+                                    
+                                 
+                                 
+                                   $('#page-content-wrapper').on('click', '.xoa_anh_edit_news', function() {
+                                      var so_thu_tu=$(this).next().val();
+                                      
+                                     var query=$(this).next().val();
+                                 
+                                 
+                                 
+                                       if(so_thu_tu != '')
+                                     {
+                                      var _token = $('input[name="_token"]').val(); // token để mã hóa dữ liệu
+                                 
+                                 //alert(_token);
+                                 
+                                 
+                                      $.ajax({
+                                       url:"/xoa-anh-ajax-tt-edit-news", // đường dẫn khi gửi dữ liệu đi 'search' là tên route mình đặt bạn mở route lên xem là hiểu nó là cái j.
+                                       method:"POST", // phương thức gửi dữ liệu.
+                                       data:{
+                                       	query:query,
+                                       	 _token:_token ,
+                                       	 so_thu_tu:so_thu_tu
+                                       	
+                                       	},
+                                 
+                                       
+                                       success:function(data){ //dữ liệu nhận về
+                                        var dulieu = $("#json_string_z").val();
+                                        console.log(dulieu);
+                                        // console.log(data);
+                                       document.getElementById("edit_news").innerHTML = data;         
+                                      }
+                                      });
+                                      
+                                      
+                                      }
+                                 
+                                 
+                                 });
+                                 
+                                 
+                                 
+                                 
+                                    
+                                 });
+                              </script>
+						</div>
+						
+					</div>
+
+					 
+	
+					</div>
+				</div>	
+
+				<div class="row add-user">
+					<div class="col-md-1">
+						Name
+					</div>
+					<div class="col-md-11">
+						<?php echo Form::text('name',$new->name,array('class' => 'form-control')); ?>
+
+					</div>
+				</div>
+				<div class="row add-user">
+					<div class="col-md-1">
+						Name
+					</div>
+					<div class="col-md-11">
+						<?php echo Form::text('excerpt',$new->news_excerpt,array('class' => 'form-control')); ?>
+
+					</div>
+				</div>
+				<div class="row add-user">
+					<div class="col-md-1">
+						Alias
+					</div>
+					<div class="col-md-11">
+						<?php echo Form::text('new_alias',$new->new_alias,array('class' => 'form-control')); ?>
+
+					</div>
+				</div>
+				<div class="row add-user">
+					<div class="col-md-1">
+						Nội dung
+					</div>
+					<div class="col-md-11">
+					        <textarea id="content" name="content"> <?php echo e($new->content); ?> </textarea>
+						<script>CKEDITOR.replace('content');</script>
+					</div>
+				</div>				
+				<div class="row add-user">
+					<div class="col-md-1">
+						Danh mục
+					</div>
+					<div class="col-md-11">
+
+					<select class="form-control" name="cat_new_id">
+										<?php
+									//	var_dump ($catnews);
+				if(isset($catnews)) {
+
+						categories_new_admin_edit($catnews,0,'',$new->cat_new_id);
+						
+						//view_category($catnews,$new->cat_new_id);
+
+							
+						}
+						
+				?>
+
+
+				      </select>
+					</div>
+				</div>	
+				<div class="row add-user">
+					<div class="col-md-1">
+						Thẻ từ khóa
+					</div>
+					<div class="col-md-11">
+				
+					<?php echo Form::text('the_tu_khoa',$new->the_tu_khoa, array('class' => 'form-control')); ?>
+
+					</div>
+				</div>				
+				<div class="row add-user">
+					<div class="col-md-1">
+						Thẻ giới thiệu
+					</div>
+					<div class="col-md-11">
+					<?php echo Form::textarea('the_gioi_thieu', $new->the_gioi_thieu, ['class' => 'form-control','size' => '30x3']); ?>
+
+					</div>
+				</div>
+				
+				<div class="row add-user">
+					<div class="col-md-1">
+						Hoạt động luôn 123
+					</div>
+					<div class="col-md-11">
+						<input type="checkbox" name="hoat_dong" value="1" <?php
+						if($new->status_new){echo "checked";}
+						?>>
+					</div>
+				</div>
+				<div class="row add-user">
+					<div class="col-md-1">
+						
+					</div>
+					<div class="col-md-10">
+						<?php echo Form::submit('Cập nhật!',array('class' => 'btn btn-default')); ?>
+
+					</div>
+				</div>
+				
+				<?php echo Form::close(); ?>
+
+			
+
+		</div>
+		
+	</div> 
+
+	</div>
+<?php echo $__env->make('admin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

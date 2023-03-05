@@ -1,0 +1,383 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('site.slide', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div id="box-main">
+   <div class="container">
+      <div class="row">
+         <div class="">
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Thạch Cao</h3>
+               </div>
+              
+               <div class="row mg-15">
+                  <?php foreach($gach_xd as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                 <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Sơn Nhà</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($cat_xd as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Báo Giá</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($da_xd as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                 <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Giấy Dán Tường</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($ton_ma_mau as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="clear"></div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Trần Nhôm</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($xi_mang as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Trần Nhựa</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($tran_nhua as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="clear"></div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Trần Xuyên Sáng</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($tran_xuyen_sang as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+            <div class="product_home">
+               <div class="tieude_id pd-mb">
+                  <h3 class="">Nhôm Kính</h3>
+               </div>
+               <div class="clear"></div>
+               <div class="row mg-15">
+                  <?php foreach($nhom_kinh as $lvhd): ?>
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 pd-15">
+                     <div class="baiviet__item">
+                        <div class="baiviet__border">
+                           <div class="baiviet__hover">
+                              <?php          
+                                 $img_xs = json_decode($lvhd->image_list);
+                                 if($img_xs == null){
+                                 ?>
+                              <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                              <?php }else{
+                                 if(isset($img_xs)==true) {
+                                       foreach ($img_xs as $img_x) {
+                                       
+                                 ?>
+                              <a href="<?php echo e($lvhd->product_alias); ?>" title="<?php echo e($lvhd->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($lvhd->name); ?>"></a>
+                              <?php } ?>
+                              <?php } ?>
+                              <?php } ?>
+                           </div>
+                           <div class="baiviet__content">
+                              <div class="baiviet__name"> 
+                                 <a href="<?php echo e($lvhd->product_alias); ?>"><?php echo e($lvhd->name); ?></a>
+                              </div>
+                              <div class="bang-gia">
+                                  <a href="<?php echo e($lvhd->product_alias); ?>">Xem chi tiết</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <?php endforeach; ?>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container s_cuoi_index">
+      <div class="row">
+	  
+	                          
+						                                 <?php
+                                 foreach ($menu_inde_footer as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_index_footer($jsons,'');
+							//	 	var_dump($menu_top);
+     // exit("ok");
+                               ?>
+
+                          
+
+ 
+	  <!--
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4 ">
+            <a href="/" class="tran_thach_cao">Trần thạch cao</a> 
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/" class="son_nha">Sơn nhà</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/"class="nhom_kinh" >Nhôm kính</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/"class="giay_dan_tuong" >Giấy dán tường</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4 ">
+            <a href="/" class="tran_nhom">Trần nhôm</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/" class="vach_ngan">Vách Ngăn</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/" class="tran_suyen_sang">Trần suyên sáng</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/" class="thiet_ke_noi_that">Thiết kế nội thất</a>
+         </div>
+         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <a href="/" class="sua_nha">Sửa nhà</a>
+         </div>
+		 -->
+		 
+      </div>
+   </div>
+</div>
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

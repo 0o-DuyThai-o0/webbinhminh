@@ -1,0 +1,14 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="the_dieu_huong">
+  <div class="container">
+      <b>
+          <a href="./">trang chủ</a> -> <a href="./<?php echo e($new->new_alias); ?>"><?php echo $new->name ?></a> 
+      </b>
+  </div>
+</div>
+
+<?php echo $new->content; ?>
+
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

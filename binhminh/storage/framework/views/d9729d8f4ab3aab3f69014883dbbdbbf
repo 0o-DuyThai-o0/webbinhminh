@@ -1,0 +1,197 @@
+<?php echo $__env->make('site.succsess', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!DOCTYPE html>
+<html lang="vi">
+   <!-- Added by HTTrack -->
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <!-- /Added by HTTrack -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <?php if(isset($product)){?>
+      <title><?php echo $product->name; ?></title>
+      <meta name="keywords" content="<?php echo $product->the_tu_khoa; ?>"/>
+      <?php 
+         }
+         ?>
+      <?php if(isset($cat)) {
+         ?>
+      <title></title>
+      <meta name="keywords" content=""/>
+      <meta property="og:description" content="" />
+      <?php
+         }  ?>
+      <?php if(isset($title)) {
+         echo "<title>".$title."</title>";
+         }else{
+          echo "<title>"."CÔNG TY TNHH VẬT LIỆU XÂY DỰNG HUY TUẤN PHÁT"."</title>";
+         }
+         
+         ?>
+      <link rel="icon" href="<?php echo e(asset('public/images/logohuytuanphat.png')); ?>">
+      <link rel="stylesheet" href="<?php echo e(asset('public/css/css-t/bootstrap.min.css')); ?>">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.6/css/jquery.fancybox.min.css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/owl.carousel.min.css?1550213083537" rel="stylesheet" type="text/css" />
+      <!-- Build Main CSS -->               
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/base.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/style.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/style.css')); ?>" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/module.scss.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/responsive.css')); ?>" rel="stylesheet" type="text/css" />
+      <link href="https://bizweb.dktcdn.net/100/344/950/themes/706337/assets/animate.css?1550213083537" rel="stylesheet" type="text/css" />
+      <link href="<?php echo e(asset('public/css/css-t/swiper.min.mobile.css')); ?>" rel="stylesheet" type="text/css" />
+   </head>
+   <?php if(isset($_SESSION['admin'])){
+      ?>
+      <input type="button" class="btn btn-danger custom_an" value="Ẩn" style="position: fixed;z-index: 99999999;">
+      <?php } ?>
+   <body>
+      <!-- End Header -->
+
+      <header class="header_main">
+         <div class="hd-fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-4 col-md-12">
+                        <span>
+                            <marquee direction="LEFT">CÔNG TY TNHH VẬT LIỆU XÂY DỰNG HUY TUẤN PHÁT</marquee>
+                        </span>
+                    </div>
+                    <div class="col-lg-2 col-xl-2 col-md-4 dis-none-max768">
+                        <span class="fix__hotline hide-9"><?php echo  home_field($all_field_home,1);?></span>
+                    </div>
+                    <div class="col-lg-3 col-xl-3 col-md-4 dis-none-max768">
+                        <span class="fix__email hide-9"><?php echo  home_field($all_field_home,2);?></span>
+                    </div>
+                    <div class="col-lg-3 col-xl-3 col-md-4 dis-none-max768">
+                        <div class="mxh hide-9">
+                        <ul>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/channel/UC-5fHWL5F6dN01-BvrAdATg?view_as=subscriber"> 
+                                    <?php echo  home_field($all_field_home,21);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://mail.google.com/mail/u/0/"> 
+                                    <?php echo  home_field($all_field_home,20);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://zalo.me/0916859666"> 
+                                    <?php echo  home_field($all_field_home,19);?>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/V%E1%BA%ADt-Li%E1%BB%87u-X%C3%A2y-D%E1%BB%B1ng-Huy-Tu%E1%BA%A5n-Ph%C3%A1t-104470804300752/?modal=admin_todo_tour"> 
+                                    <?php echo  home_field($all_field_home,18);?>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clear"> </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="container">
+                <div class="row flex-box">
+                    <div class="col-lg-2 col-xl-2 col-md-12 dis-none-max768">
+                        <div class="header__logo">
+                            <a href="/" title="CÔNG TY TNHH VẬT LIỆU XÂY DỰNG HUY TUẤN PHÁT">
+                                <?php echo  home_field($all_field_home,6);?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-xl-10 col-md-12 dis-none-max768">
+                        <?php echo  home_field($all_field_home,7);?>
+                    </div>
+                    <div class="col-lg-10 col-xl-10 col-md-12 display-min-w768">
+                        <?php echo  home_field($all_field_home,3);?>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="header_bottom">
+            <div class="container bg_menu">
+               <div class="row">
+                  <!-- Menu mobile -->
+                  <div class="hidden-lg hidden-md visibile-sm visibile-xs">
+                     <section  id="menu-mobi" class="menu_mobile menu_mobile_button">
+                        <div id="menu_mobile_button_line_main">
+                           <span class="menu_mobile_button_line menu_mobile_button_line_1"></span>
+                           <span class="menu_mobile_button_line menu_mobile_button_line_2"></span>
+                           <span class="menu_mobile_button_line menu_mobile_button_line_3"></span>
+                        </div>
+                     </section>
+                     <nav class="menu_mobile_list" style="display:none;">
+                        <div class="menu_mobile_pushmenu menu_mobile_pushmenu_left">
+                           <ul class="menu_mobile_list_inner">
+                              <li class="level0 "><a href="" title="Trang Chủ">Trang Chủ</a></li>
+                              <li class="level0 "><a href="/gioi-thieu" title="Giới Thiệu">Giới Thiệu</a></li>
+                              <li class="level0 parent">
+                                 <a href="/san-pham" title="Sản Phẩm">Sản Phẩm</a>
+                                 <i class="fa fa-angle-down fa-icon-action"></i>
+                                 <ul class="menu_mobile_list_submenu lv1" style="display:none;">
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Gạch xây dựng" href="/gach-xay-dung">Gạch xây dựng</a></li>
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Cát xây dựng" href="/cat-xay-dung">Cát xây dựng</a></li>
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Đá xây dựng" href="/da-xay-dung">Đá xây dựng</a></li>
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Tôm mạ màu" href="/ton-ma-mau">Tôm mạ màu</a></li>
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Xi măng" href="/xi-mang">Xi măng</a></li>
+                                    <li class="level1"><a class="menu_mobile_list_submenu_link" title="Thép xây dựng" href="/thep-xay-dung">Thép xây dựng</a></li>
+                                 </ul>
+                              </li>
+                              <li class="level0 "><a href="/bao-gia-vlxd" title="Báo Giá VLXD">Báo Giá VLXD</a></li>
+                              <li class="level0 "><a href="/tin-tuc" title="Tin Tức">Tin Tức</a></li>
+                              <li class="level0 "><a href="/san-lap-mat-bang" title="San Lấp Mặt Bằng">San Lấp Mặt Bằng</a></li>
+                              <li class="level0 "><a href="/lien-he" title="Liên hệ">Liên hệ</a></li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+                  <!-- End Menu mobile -->
+                  <!-- Logo -->
+                  <div class="col-md-3 col-sm-10 col-xs-6 col-xs-offset-3 col-lg-offset-0 col-sm-offset-1 col-md-offset-0 display-min-w768">
+                     <div class="logo">
+                        <a href="/">  <?php echo  home_field($all_field_home,6);?>  </a>
+                     </div>
+                  </div>
+                <!-- End Logo -->
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                     <!-- Menu -->
+                     <nav class="menu_main hidden-sm hidden-xs">
+                        <div class="menu_main_list">
+                           <ul id="nav">
+                              <?php
+                                 foreach ($menu_top as $value) {
+                                 $jsons=json_decode($value->content,1);
+                                 }
+                                //  var_dump($jsons); 
+                                 showCategories_menu_top_one_header($jsons,'');
+                               ?>
+                           </ul>
+                        </div>
+                     </nav>
+                     <!-- End Menu -->
+                     <!-- Search -->
+                     <div class="searchboxlager">
+                        <div class="searchfromtop">
+                         <?php echo Form::open(array('method' => 'POST','action' => array('Site\SanphamController@getdata' ))); ?>
+
+                              <input type="text" class="form-control" maxlength="70" name="search_site" id="search" placeholder="Nhập từ khóa tìm kiếm và ấn enter">                           
+                              <input type="hidden" name="type" value="article">
+                         <?php echo Form::close(); ?>
+
+                           <a class="hidesearchfromtop"><i class="fa fa-times"></i></a>
+                        </div>
+                     </div>
+                     <div class="search_form_main">
+                        <div class="search_form_icon"><i class="fa fa-search"></i></div>
+                     </div>
+                     <!-- End Search -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>

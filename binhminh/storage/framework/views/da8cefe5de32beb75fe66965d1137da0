@@ -1,0 +1,49 @@
+<?php echo $__env->make('site.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<div class="container">
+<div class="row mb-3">
+      <div class="col-md-9 themed-grid-col">
+                                <div class="logo-sm">
+                                    <div class="sanphamnoibat">
+                                      <a href="/"> Trang chủ </a> >
+                                    </div>
+                                    <div class="sanphamnoibat">
+                                        <span class="sanpham"><?php echo $cat->name; ?></span>
+                                    </div>
+                                </div>
+		<div class="row">
+                                <?php foreach($list_articles_cat as $list_bv): ?>
+                                    <div class="col-md-4 col-sm-6 col-12 detail-display">
+									<div class="s_bentrong">
+								    <a href="<?php echo e($list_bv->product_alias); ?>">
+                                            <div class="img-chongbamban">
+                                                <?php          
+                                                   $img_xs = json_decode($list_bv->image_list);
+                                                   if($img_xs == null){
+                                                   ?>
+                                                <img src="https://bizweb.dktcdn.net/100/057/112/themes/74363/assets/no-image.jpg?1556185055601" alt="">
+                                                <?php }else{
+                                                   if(isset($img_xs)==true) {
+                                                         foreach ($img_xs as $img_x) {
+                                                         
+                                                   ?>
+                                                <a href="<?php echo e($list_bv->product_alias); ?>" title="<?php echo e($list_bv->name); ?>"><img src="<?php echo $img_x->url;?>" alt="<?php echo e($list_bv->name); ?>" class="sondulux"></a>
+                                                <?php } ?>
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="text-dulux">
+                                                <span class="duluxchongbam"><a href="<?php echo e($list_bv->product_alias); ?>"><?php echo e($list_bv->name); ?> </a></span>
+                                            </div>
+                                        </a>
+                                   </div>
+								     </div>
+                                 <?php endforeach; ?>
+		</div>		
+	  
+	  </div>
+      <div class="col-12 col-md-3 themed-grid-col"><?php echo $__env->make('site.sitebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></div>
+    </div>
+</div> 
+
+
+<?php echo $__env->make('site.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

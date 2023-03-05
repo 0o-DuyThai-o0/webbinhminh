@@ -1,0 +1,42 @@
+.the_tong{
+    display: flex;
+    justify-content: center;
+    height: 1000px;
+}
+
+.the_cha{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 1200px;
+}
+
+.the_con_1{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(162, 39, 39);
+}
+
+.the_con_2{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(129, 39, 162);
+}
+
+.the_con_3{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(41, 162, 39);
+}
+
+.the_con_3{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(41, 162, 39);
+}
+
+.the_con_3{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(41, 162, 39);
+}

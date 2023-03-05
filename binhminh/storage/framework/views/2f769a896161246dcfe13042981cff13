@@ -1,0 +1,231 @@
+    <div class="footer pt-3 pb-5">
+            <div class="container">
+                <div class="box">
+                    <div class="col-lg-3 column">
+                        <?php home_field($all_field_home,39);?>
+
+                    </div>
+                    <div class="col-lg-3 column">
+                       
+						<?php home_field($all_field_home,40);?>
+                    </div>
+                    <div class="col-lg-3 column">
+                     
+					   <?php home_field($all_field_home,41);?>
+                    </div>
+                    <div class="col-lg-3 column">
+
+<?php home_field($all_field_home,42);?>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php home_field($all_field_home,44); ?>
+    </section>
+    
+
+
+    <script>
+        const nav =  document.querySelector(".nav-y");
+        const toggle_menu =  document.querySelector("button");
+        const main =  document.querySelector(".main");
+        const closes = document.querySelector(".close");
+
+        toggle_menu.onclick = function(){
+            nav.classList.toggle("hide");
+            main.classList.toggle('expand');
+        };
+        closes.onclick = function(){
+            nav.classList.remove("hide");
+            main.classList.remove('expand');
+        }
+        const swiper = new Swiper('.swiper', {
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>
+<style>
+.suntory-alo-phone {
+  background-color: transparent;
+  cursor: pointer;    text-decoration: none;
+  height: 55px;
+  position: fixed;
+  transition: visibility 0.5s ease 0s;
+  width: 120px;
+  z-index: 200000 !important;
+}
+.suntory-alo-phone.suntory-alo-phone-0 {left: 0; bottom: 0;}
+.suntory-alo-phone.suntory-alo-phone-1 {right: 0px; bottom: 0px;}
+.suntory-alo-ph-circle {
+  animation: 1.2s ease-in-out 0s normal none infinite running suntory-alo-circle-anim;
+  background-color: transparent;
+  border: 2px solid rgba(30, 30, 30, 0.4);
+  border-radius: 100%;
+  height: 130px;
+  width: 130px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  opacity: 0.1;
+  transform-origin: 50% 50% 0;
+  transition: all 0.5s ease 0s;
+}
+.suntory-alo-ph-circle-fill {
+  animation: 2.3s ease-in-out 0s normal none infinite running suntory-alo-circle-fill-anim;
+  border: 2px solid transparent;
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+    left: 35px;
+    top: 39px;
+  transform-origin: 50% 50% 0;
+  transition: all 0.5s ease 0s;
+}
+.suntory-alo-ph-img-circle {
+    animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim;
+    border: 2px solid transparent;
+    border-radius: 100%;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    left: 8px;
+    top: 0;
+    opacity: 1;
+    padding-top: 0;
+    transform-origin: 50% 50% 0;
+    z-index: 1;
+}
+.suntory-alo-phone.suntory-alo-hover, .suntory-alo-phone:hover { opacity: 1;}
+.suntory-alo-phone.suntory-alo-active .suntory-alo-ph-circle {
+  animation: 1.1s ease-in-out 0s normal none infinite running suntory-alo-circle-anim !important;
+}
+.suntory-alo-phone.suntory-alo-static .suntory-alo-ph-circle {
+  animation: 2.2s ease-in-out 0s normal none infinite running suntory-alo-circle-anim !important;
+}
+.suntory-alo-phone.suntory-alo-hover .suntory-alo-ph-circle, .suntory-alo-phone:hover .suntory-alo-ph-circle {
+  border-color: #00aff2;
+  opacity: 0.5;
+}
+.suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-circle, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-circle {
+  border-color: #0090b8; /*màu xanh dương*/
+  opacity: 1;
+}
+.suntory-alo-phone.suntory-alo-green .suntory-alo-ph-circle {
+  border-color: #ff541f69;
+  opacity: 1;
+}
+.suntory-alo-phone.suntory-alo-hover .suntory-alo-ph-circle-fill, .suntory-alo-phone:hover .suntory-alo-ph-circle-fill {
+  background-color: rgba(0, 175, 242, 0.9);
+}
+.suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-circle-fill, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-circle-fill { background-color: #0090b8;} 
+.suntory-alo-phone.suntory-alo-green .suntory-alo-ph-circle-fill { background-color: #ff541f;}
+
+.suntory-alo-phone.suntory-alo-hover .suntory-alo-ph-img-circle, .suntory-alo-phone:hover .suntory-alo-ph-img-circle { background-color: #00aff2;}
+.suntory-alo-phone.suntory-alo-green.suntory-alo-hover .suntory-alo-ph-img-circle, .suntory-alo-phone.suntory-alo-green:hover .suntory-alo-ph-img-circle { background-color: #0090b8;} /* màu xanh dương */
+.suntory-alo-phone.suntory-alo-green .suntory-alo-ph-img-circle { background-color: #ff541f;}
+@keyframes    suntory-alo-circle-anim {
+  0% {
+      opacity: 0.1;
+      transform: rotate(0deg) scale(0.5) skew(1deg);
+  }
+  30% {
+      opacity: 0.5;
+      transform: rotate(0deg) scale(0.6) skew(1deg);
+  }
+  100% {
+      opacity: 0.6;
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+  }
+}
+@keyframes    suntory-alo-circle-img-anim {
+  0% {
+      transform: rotate(0deg) scale(1) skew(1deg);
+  }
+  10% {
+      transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+      transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+      transform: rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+      transform: rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+      transform: rotate(0deg) scale(1) skew(1deg);
+  }
+  100% {
+      transform: rotate(0deg) scale(1) skew(1deg);
+  }
+}
+@keyframes    suntory-alo-circle-fill-anim {
+  0% {
+      opacity: 0.2;
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+  }
+  50% {
+      opacity: 0.2;
+      transform: rotate(0deg) scale(1) skew(1deg);
+  }
+  100% {
+      opacity: 0.2;
+      transform: rotate(0deg) scale(0.7) skew(1deg);
+  }
+}
+.suntory-alo-ph-img-circle i {
+  animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim;
+  font-size: 30px!important;
+  line-height: 47px!important;
+  padding-left: 10px;    padding-left: 14px;
+  color: #fff;
+}
+.phone-pc {
+    background: #ff541f;
+    color: #fff;
+    padding: 6px;
+    font-size: 16px;
+    top: 7px;
+    left: 50px;
+    position: relative;
+    width: 136px;
+    text-align: center;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+    opacity: 1;
+    visibility: visible;
+
+}
+.suntory-alo-phone:hover .phone-pc { background: #0090b8;} /* màu xanh dương */
+.show-phone {
+  visibility: visible;
+  opacity: 1;
+  width: 200px;
+}
+</style> 
+
+<div class="call-mobile1" style="     position: fixed;
+    bottom: 110px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 0px 0 0px;
+    border-radius: 40px;
+    color: #fff;
+    left: 10px;
+    z-index: 99999;
+    background: #0c8800 !important;
+    font-size: 14px;"> <a  href="https://zalo.me/0962222717" target="_blank" class="button success" style="border-radius:99px;background: #0c8800 !important;" > <span style="    font-size: 19px;
+    color: #fff;
+    padding: 5px 15px;">Chat Zalo </span></a></div>
+
+      
+<a href="tel:02422444555" class="suntory-alo-phone suntory-alo-green" id="suntory-alo-phoneIcon" style="left: 0; bottom: 25px;"><div class="suntory-alo-ph-img-circle"><i class="large icon phone"><img style="width:26px;" src="http://congtyducduong.com/images/icon/icon-phone-hotline.png"/></i></div><div class="phone-pc  pc-only">02422 444 555</div></a>
+

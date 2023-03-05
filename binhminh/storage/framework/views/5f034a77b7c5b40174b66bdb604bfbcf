@@ -1,0 +1,10 @@
+<?php echo Form::open(array('method' => 'POST','action' => array('Site\SanphamController@form__input_search',Request::input('form__input_search')))); ?>
+
+						<div class="form_menu_phu_1">
+							<input type="text" required class="header__input" name="form__input_search" placeholder="Bạn cần tìm gì?"
+								value="<?php if(isset($form__input_search)) echo $form__input_search ; ?>">
+							<button class="header__input-icon">
+								<i class="fa-solid fa-magnifying-glass header__input-icon-link"></i>
+							</button>
+						</div>
+					<?php echo Form::close(); ?>
